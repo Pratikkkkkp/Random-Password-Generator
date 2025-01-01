@@ -8,6 +8,9 @@ const numbersEl = document.getElementById("numbers");
 const symbolsEl = document.getElementById("symbols");
 const strengthEl = document.getElementById("strength");
 
+// Hide alert initially
+alertContainerEl.style.display = "none";
+
 // Generate Password Button Click
 btnEl.addEventListener("click", () => {
   createPassword();
@@ -16,12 +19,9 @@ btnEl.addEventListener("click", () => {
 
 // Copy Password Icon Click
 copyIconEl.addEventListener("click", () => {
-  copyPassword();
   if (inputEl.value) {
-    alertContainerEl.classList.remove("active");
-    setTimeout(() => {
-      alertContainerEl.classList.add("active");
-    }, 2000);
+    copyPassword();
+    showAlert();
   }
 });
 
@@ -47,7 +47,7 @@ function createPassword() {
   }
 
   inputEl.value = password;
-  alertContainerEl.innerText = password + " copied!";
+  alertContainerEl.innerText = "Password copied!";
 }
 
 // Function to Copy Password
@@ -55,6 +55,14 @@ function copyPassword() {
   inputEl.select();
   inputEl.setSelectionRange(0, 9999);
   navigator.clipboard.writeText(inputEl.value);
+}
+
+// Function to Show Alert
+function showAlert() {
+  alertContainerEl.style.display = "block";
+  setTimeout(() => {
+    alertContainerEl.style.display = "none";
+  }, 2000); // Alert visible for 2 seconds
 }
 
 // Function to Update Strength Indicator
