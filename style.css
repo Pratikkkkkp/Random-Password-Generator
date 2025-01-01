@@ -59,6 +59,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 10px;
 }
 
 .checkbox-container label {
@@ -143,14 +144,15 @@ body {
 
 /* Alert Container */
 .alert-container {
-  position: fixed;
+  position: absolute;
   width: 90%;
   max-width: 300px;
   background: #00ffff;
   color: #000;
   border-radius: 10px;
-  bottom: 20px;
-  right: -300px;
+  bottom: 80px; /* Position it between the container and footer */
+  right: 50%;
+  transform: translateX(50%);
   text-align: center;
   padding: 10px;
   box-shadow: 0 0 15px #00ffff;
@@ -158,7 +160,7 @@ body {
 }
 
 .alert-container.active {
-  right: 20px;
+  bottom: 80px;
 }
 
 /* Strength Indicator */
@@ -187,6 +189,9 @@ body {
 @media (max-width: 768px) {
   .password-container {
     padding: 15px;
+    width: 90%; /* Slightly narrower */
+    max-width: 350px; /* Reduce container width */
+    box-shadow: 0 0 10px 3px rgba(0, 255, 255, 0.4); /* Slightly reduced glow */
   }
 
   .input-container {
@@ -196,5 +201,22 @@ body {
 
   .fa-copy {
     margin-top: 10px;
+  }
+
+  /* Adjust checkboxes for smaller screens */
+  .checkbox-container {
+    margin-top: 15px;
+  }
+
+  .checkbox-container label {
+    font-size: 14px;
+  }
+
+  .length-label {
+    font-size: 14px;
+  }
+
+  .length-label input[type="number"] {
+    width: 70px; /* Adjust width */
   }
 }
