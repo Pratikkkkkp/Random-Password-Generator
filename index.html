@@ -18,19 +18,27 @@
     <div class="password-container">
       <h2>Enhanced Password Generator</h2>
       <div class="password-settings">
-        <label>
+        <label class="length-label">
           Password Length:
           <input type="number" id="length" min="4" max="32" value="14" />
         </label>
-        <label>
-          <input type="checkbox" id="uppercase" checked /> Include Uppercase
-        </label>
-        <label>
-          <input type="checkbox" id="numbers" checked /> Include Numbers
-        </label>
-        <label>
-          <input type="checkbox" id="symbols" checked /> Include Symbols
-        </label>
+        <div class="checkbox-container">
+          <label>
+            <input type="checkbox" id="uppercase" checked />
+            <span class="custom-checkbox"></span>
+            Include Uppercase
+          </label>
+          <label>
+            <input type="checkbox" id="numbers" checked />
+            <span class="custom-checkbox"></span>
+            Include Numbers
+          </label>
+          <label>
+            <input type="checkbox" id="symbols" checked />
+            <span class="custom-checkbox"></span>
+            Include Symbols
+          </label>
+        </div>
       </div>
       <div class="strength-indicator">
         Strength: <span id="strength">Medium</span>
@@ -51,5 +59,6 @@
     <script src="index.js"></script>
     <div class="footer">
       <span><b>Copyright &copy; Designed by Pratik Pal</b></span>
-    </body>
+    </div>
+  </body>
 </html>
